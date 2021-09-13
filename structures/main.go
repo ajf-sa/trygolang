@@ -29,8 +29,12 @@ func main() {
 	fmt.Printf("Book 1 book_id : %d\n", book1.BookID)
 
 	/* print Book2 info */
-	fmt.Printf("Book 2 title : %s\n", book2.Title)
-	fmt.Printf("Book 2 author : %s\n", book2.Author)
-	fmt.Printf("Book 2 subject : %s\n", book2.Subject)
-	fmt.Printf("Book 2 book_id : %d\n", book2.BookID)
+	pringBook(book2)
+}
+
+func pringBook(book Book) {
+	fmt.Printf("Book  title : %s\n", book.Title)
+	fmt.Printf("Book  author : %s\n", book.Author)
+	fmt.Printf("Book  subject : %s\n", book.Subject)
+	fmt.Printf("Book  book_id : %d\n", book.BookID)
 }
