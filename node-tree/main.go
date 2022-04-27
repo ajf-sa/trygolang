@@ -61,6 +61,39 @@ func (t *TreeNode) PrintInorder() {
 	fmt.Print(t.Val)
 	t.Right.PrintInorder()
 }
+func dfs(root *TreeNode, value int) {
+	if root == nil {
+		return
+	}
+	if root.Val == value {
+		fmt.Println("Found")
+		return
+	}
+	dfs(root.Left, value)
+	dfs(root.Right, value)
+}
+func bfs(root *TreeNode, value int) {
+	if root == nil {
+		return
+	}
+	queue := []*TreeNode{}
+	queue = append(queue, root)
+	for len(queue) > 0 {
+		node := queue[0]
+		queue = queue[1:]
+		if node.Val == value {
+			fmt.Println("Found")
+			return
+		}
+		if node.Left != nil {
+			queue = append(queue, node.Left)
+		}
+		if node.Right != nil {
+			queue = append(queue, node.Right)
+		}
+	}
+}
+
 func main() {
 	nt := TreeNode{}
 	nt.Insert(9999)
